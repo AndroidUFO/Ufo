@@ -128,10 +128,6 @@ public class HttpConfigs {
         return null;
     }
 
-    public SocketFactory socketFactory() {
-        return null;
-    }
-
     public boolean retryOnConnectionFailure() {
         // 源码默认为true
         return true;

@@ -1,7 +1,9 @@
 # Ufo
 
 #### 介绍
-一款傻瓜式的Android网络访问框架，比Retrofit更简洁易使用。
+Ufo是一款简便易用的Android网络访问框架，内部封装了OkHttp，并且可以自定义内部http访问实现框架，如Volley，并提供了两种风格的使用方式：
+1. 傻瓜式：类似Retrofit使用方法，推荐。
+2. 链式：类似OkGo使用方式。
 
 #### Ufo网络框架使用SoEasy，4步轻松搞定：
 1. 引入Ufo插件；
@@ -28,10 +30,16 @@ android {
     }
 }
 dependencies {
+    // 傻瓜式引入下面两个工程：
     implementation project(':api')
     annotationProcessor project(':api-compiler')
+    // 链式引入下面工程：
+    implementation project(':ufo-core')
 }
 ````
+
+###### PS: 文档主要介绍傻瓜式调用，链式调用请使用Ufo.getInstance()方式查看具体方法。
+
 3. 定义Api接口类和请求方法；
 4. 调用请求方法；
 
@@ -93,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
 其中@Download代表下载文件，@Upload代表上传文件，框架内部将上传和下载单独列出，使用更加方便。
 ````
 
-##### PS：ResultCall支持泛型，可自动将请求响应数据解析为指定的类型，为了方便，后面的示例都使用String类型。
+###### PS：ResultCall支持泛型，可自动将请求响应数据解析为指定的类型，为了方便，后面的示例都使用String类型。
 
 #### 自动绑定生命周期，拒绝内存泄漏
 该框架提供了网络请求绑定生命周期功能，无需担心Activity或Fragment被销毁后请求依旧还在执行导致内存泄露。
@@ -254,6 +262,7 @@ assetsBks：填写bks证书在assets文件夹下的完整路径，没有可不�
 bksPassword：bks证书的密码
 将证书路径配置正确，无需其他操作即可生效！
 ````
+###### PS: 如果需要配置https的证书，那么必须调用Ufo.getInstance().init(context)方法，否则无法加载证书，不配置证书则可以不用执行该方法；
 
 #### 动态多环境Url支持
 该框架还支持多环境url自由切换，要实现多环境url需要将定义的Api接口类继承MultipleUrlEnvConfigs接口，并实现方法initUrlEnvConfigs的默认行为。

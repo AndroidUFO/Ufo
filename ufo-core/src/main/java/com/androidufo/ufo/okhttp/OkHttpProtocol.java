@@ -235,10 +235,6 @@ public class OkHttpProtocol implements HttpProtocol {
             builder.minWebSocketMessageToCompress(minWebSocketMessageToCompress);
         }
 
-        SocketFactory socketFactory = configs.socketFactory();
-        if (socketFactory != null) {
-            builder.socketFactory(socketFactory);
-        }
         boolean retryOnConnectionFailure = configs.retryOnConnectionFailure();
         builder.retryOnConnectionFailure(retryOnConnectionFailure);
         ProxySelector proxySelector = configs.proxySelector();
