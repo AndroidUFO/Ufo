@@ -141,6 +141,7 @@ public interface MyApi {
     @Post(restUrl = "/goods/{startDate}/{endDate}", format = BodyFormat.JSON)
     ResultCall<String> searchGoods(
             @Body BodyParams bodyParams,
+            @Header HeaderParams headersParams,
             @Path(key = "startDate") String startDate,
             @Path(key = "endDate") String endDate
     );
