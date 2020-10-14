@@ -80,10 +80,9 @@ public class Provider {
         HttpConfigs httpConfigs = createHttpConfigsInstance(canonicalName);
         OkHttpProtocol protocol;
         HttpsInfos httpsInfos = getHttpsInfos(canonicalName);
-        Context context = Ufo.getInstance().getContext();
         if (httpsInfos != null) {
             try {
-                AssetManager assetManager = context.getAssets();
+                AssetManager assetManager = Ufo.getInstance().getContext().getAssets();
                 InputStream certificate = openStream(assetManager, httpsInfos.getAssetsSslCer());
                 InputStream bksIs = null;
                 if (!EmptyUtils.stringNull(httpsInfos.getAssetsBks())) {
