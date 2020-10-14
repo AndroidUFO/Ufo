@@ -317,3 +317,4 @@ myApi.getInfos(queryParams)
 1. 支持配置拦截器；
 2. 断点续传下载；
 3. 网络缓存；
+4. Rx支持；
