@@ -38,4 +38,10 @@
             android:layout_height="wrap_content"
             android:text="多环境url配置和切换示例"/>
 
+    <Button
+            android:id="@+id/btnHttpConfigs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="http其他配置"/>
+
 </LinearLayout>

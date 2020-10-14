@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import androidx.core.app.ActivityCompat;
+import com.androidufo.demo.configs.ConfigsActivity;
 import com.androidufo.demo.download.DownloadActivity;
 import com.androidufo.demo.get.GetActivity;
 import com.androidufo.demo.post.PostActivity;
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btnDownload).setOnClickListener(this);
         findViewById(R.id.btnUpload).setOnClickListener(this);
         findViewById(R.id.btnMultipleUrlEnv).setOnClickListener(this);
+        findViewById(R.id.btnHttpConfigs).setOnClickListener(this);
         // 注意：获取sdcard权限，这里为了让代码看起来更加简单，就不特别处理是否授予权限，要使用demo就必须授权
         ActivityCompat.requestPermissions(
                 this,
@@ -53,7 +55,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btnMultipleUrlEnv:
                 goMultipleUrlEnv();
                 break;
+            case R.id.btnHttpConfigs:
+                goHttpConfigs();
+                break;
         }
+    }
+
+    private void goHttpConfigs() {
+        go(ConfigsActivity.class);
     }
 
     private void goMultipleUrlEnv() {
