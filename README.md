@@ -131,7 +131,7 @@ public interface MyApi {
     
     @Post(restUrl = "/goods/{startDate}/{endDate}", format = BodyFormat.JSON)
     ResultCall<String> searchGoods(
-            @Body RequestParams bodyParams,
+            @Body BodyParams bodyParams,
             @Path(key = "startDate") String startDate,
             @Path(key = "endDate") String endDate
     );
@@ -163,8 +163,8 @@ myApi.getInfos(queryParams)
 http://192.168.1.23:8080?name=ZhangSan&age=20
 
 方法searchGoods调用：
-RequestParams bodies =
-        new RequestParams.Builder()
+BodyParams bodies =
+        new BodyParams.Builder()
                 .param("goodsName", "Apple")
                 .build();
 HeaderParams headers =
