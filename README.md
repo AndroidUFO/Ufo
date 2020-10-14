@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
 其中@Download代表下载文件，@Upload代表上传文件，框架内部将上传和下载单独列出，使用更加方便。
 ````
 
-##### PS：ResultCall支持泛型，可自动将请求响应数据解析为指定的类型，为了方便，后面的示例都使用String类。
+##### PS：ResultCall支持泛型，可自动将请求响应数据解析为指定的类型，为了方便，后面的示例都使用String类型。
 
 #### 自动绑定生命周期，拒绝内存泄漏
 该框架提供了网络请求绑定生命周期功能，无需担心Activity或Fragment被销毁后请求依旧还在执行导致内存泄露。
@@ -298,7 +298,7 @@ myApi.getInfos(queryParams)
         public String convert(String response, Type resultType) throws Exception {
             response：表示请求响应数据的字符串
             resultType：表示当前定义方法传入的泛型对应的type类型，用于json解析
-            同样，可以在这里进行加解密操作，这里就简单返回一个固定字符串
+            同样，可以在这里进行解密操作，这里就简单返回一个固定字符串
             return "我是Ufo网络访问框架";
         }
     })
