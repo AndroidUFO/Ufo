@@ -1,0 +1,7 @@
+rootProject.name='Ufo'
+include ':demo'
+include ':ufo-core'
+include ':api'
+include ':commons'
+include ':api-compiler'
+include ':api-deps'

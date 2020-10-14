@@ -1,0 +1,10 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api 'org.aspectj:aspectjrt:1.9.4'
+    implementation project(':commons')
+}
+
+sourceCompatibility = "8"
+targetCompatibility = "8"
