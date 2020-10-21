@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-apply plugin: 'ufo-aspectj'
+apply plugin: 'com.androidufo.aspectj'
 
 android {
     compileSdkVersion 29

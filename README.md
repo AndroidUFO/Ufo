@@ -8,21 +8,21 @@ Ufo是一款简便易用的Android网络访问框架，内部封装了OkHttp，�
 #### Ufo网络框架使用SoEasy，4步轻松搞定：
 1. 引入Ufo插件；
 ````
-由于目前访问不了国外网站，插件和源码还未上传到jcenter，需要导入源码到工程，后续上传成功会更新使用文档。
-临时本地引用配置如下：
-拷贝源码根目录的repo插件到你的工程根目录下，然后在工程的根目录gradle配置文件中进行引用
+在工程的根目录gradle配置文件中配置如下：
 buildscript {
     repositories {
-        maven {url uri('repo')}
+      maven {
+        url "https://plugins.gradle.org/m2/"
+      }
     }
     dependencies {
-        classpath 'com.androidufo.aop:plugin:1.0.0'
+      classpath "gradle.plugin.com.androidufo.aspectj:plugin:1.1.0"
     }
 }
 ````
 2. 在使用的工程gradle文件下引入；
 ````
-apply plugin: 'ufo-aspectj'
+apply plugin: 'com.androidufo.aspectj'
 android {
     // 必须使用java8及以上版本
     compileOptions {
