@@ -40,10 +40,10 @@ android {
 }
 dependencies {
     // 傻瓜式引入下面两个依赖：
-    implementation 'com.github.AndroidUFO.Ufo:api:1.0.1'
-    annotationProcessor 'com.github.AndroidUFO.Ufo:api-compiler:1.0.1'
+    implementation 'com.github.AndroidUFO.Ufo:api:1.0.2'
+    annotationProcessor 'com.github.AndroidUFO.Ufo:api-compiler:1.0.2'
     // 链式引入下面依赖：
-    implementation 'com.github.AndroidUFO.Ufo:ufo-core:1.0.1'
+    implementation 'com.github.AndroidUFO.Ufo:ufo-core:1.0.2'
 }
 ````
 
