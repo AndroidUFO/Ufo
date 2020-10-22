@@ -1,5 +1,7 @@
 apply plugin: 'java-library'
+apply plugin: 'com.github.dcendents.android-maven'
 
+group='com.github.fengyechenxi'
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     api 'org.aspectj:aspectjrt:1.9.4'
