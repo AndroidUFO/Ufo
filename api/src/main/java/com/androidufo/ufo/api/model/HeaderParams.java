@@ -20,6 +20,7 @@ public class HeaderParams {
         private final Map<String, String> headers = new HashMap<>();
 
         public Builder header(@NotNull String key, @NotNull String value) {
+            headers.put(key, value);
             return this;
         }
 
