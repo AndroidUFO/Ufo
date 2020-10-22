@@ -1,14 +1,15 @@
 # Ufo
 
-#### 介绍
+### 介绍
 Ufo是一款简便易用的Android网络访问框架，内部封装了OkHttp，并且可以自定义内部http访问实现框架，如Volley，并提供了两种风格的使用方式：
 1. 傻瓜式：类似Retrofit使用方法，推荐。
 2. 链式：类似OkGo使用方式。
 
-#### Ufo网络框架使用SoEasy，4步轻松搞定：
-1. 引入Ufo插件；
-````
+### Ufo网络框架使用SoEasy，两步轻松搞定：
+#### 第一步：引入依赖
 在工程的根目录gradle配置文件中配置如下：
+````
+
 // 只需傻瓜式引入下面插件：
 buildscript {
     repositories {
@@ -27,7 +28,7 @@ allprojects {
     }
 }
 ````
-2. 在使用的工程gradle文件下引入；
+在使用框架的工程gradle文件下引入；
 ````
 apply plugin: 'com.androidufo.aspectj'
 android {
@@ -48,10 +49,8 @@ dependencies {
 
 ###### PS: 文档主要介绍傻瓜式调用，链式调用请使用Ufo.getInstance()方式查看具体方法。
 
-3. 定义Api接口类和请求方法；
-4. 调用请求方法；
-
-#### 最基本Api接口类定义及使用如下：
+#### 第二步：定义Api接口类和请求方法；
+##### 以下是最基本Api接口类定义及使用范例：
 ````
 定义代码：
 @Api(baseUrl = "http://192.168.1.23:8080")
@@ -110,6 +109,8 @@ public class MainActivity extends AppCompatActivity {
 ````
 
 ###### PS：ResultCall支持泛型，可自动将请求响应数据解析为指定的类型，为了方便，后面的示例都使用String类型。
+
+### 基本用法就是这么简单，接下来是更多详细的介绍：
 
 #### 自动绑定生命周期，拒绝内存泄漏
 该框架提供了网络请求绑定生命周期功能，无需担心Activity或Fragment被销毁后请求依旧还在执行导致内存泄露。
