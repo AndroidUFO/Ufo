@@ -35,6 +35,6 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
     //
-    implementation project(':api')
-    annotationProcessor project(':api-compiler')
+    implementation 'com.github.AndroidUFO.Ufo:api:1.0.1'
+    annotationProcessor 'com.github.AndroidUFO.Ufo:api-compiler:1.0.1'
 }

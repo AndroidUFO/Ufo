@@ -9,6 +9,7 @@ Ufo是一款简便易用的Android网络访问框架，内部封装了OkHttp，�
 1. 引入Ufo插件；
 ````
 在工程的根目录gradle配置文件中配置如下：
+// 只需傻瓜式引入下面插件：
 buildscript {
     repositories {
       maven {
@@ -17,6 +18,12 @@ buildscript {
     }
     dependencies {
       classpath "gradle.plugin.com.androidufo.aspectj:plugin:1.1.0"
+    }
+}
+// 傻瓜式和链式都必须引入，否则无法下载后面依赖库
+allprojects {
+    repositories {
+        maven { url 'https://jitpack.io' }
     }
 }
 ````
@@ -31,11 +38,11 @@ android {
     }
 }
 dependencies {
-    // 傻瓜式引入下面两个工程：
-    implementation project(':api')
-    annotationProcessor project(':api-compiler')
-    // 链式引入下面工程：
-    implementation project(':ufo-core')
+    // 傻瓜式引入下面两个依赖：
+    implementation 'com.github.AndroidUFO.Ufo:api:1.0.1'
+    annotationProcessor 'com.github.AndroidUFO.Ufo:api-compiler:1.0.1'
+    // 链式引入下面依赖：
+    implementation 'com.github.AndroidUFO.Ufo:ufo-core:1.0.1'
 }
 ````
 
